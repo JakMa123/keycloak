@@ -16,6 +16,7 @@
  */
 package org.keycloak.saml.validators;
 
+import org.jboss.logging.Logger;
 import org.keycloak.dom.saml.common.CommonConditionsType;
 import org.keycloak.dom.saml.v2.assertion.AudienceRestrictionType;
 import org.keycloak.dom.saml.v2.assertion.ConditionAbstractType;
@@ -23,15 +24,15 @@ import org.keycloak.dom.saml.v2.assertion.ConditionsType;
 import org.keycloak.dom.saml.v2.assertion.OneTimeUseType;
 import org.keycloak.dom.saml.v2.assertion.ProxyRestrictionType;
 import org.keycloak.saml.processing.core.saml.v2.util.XMLTimeUtil;
+
+import javax.xml.datatype.DatatypeConstants;
+import javax.xml.datatype.XMLGregorianCalendar;
 import java.net.URI;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import javax.xml.datatype.DatatypeConstants;
-import javax.xml.datatype.XMLGregorianCalendar;
-import org.jboss.logging.Logger;
 
 /**
  * Conditions validation as per Section 2.5 of https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf
